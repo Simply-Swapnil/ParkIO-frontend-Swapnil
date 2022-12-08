@@ -1,15 +1,47 @@
 import { StyleSheet, Text, View } from "react-native";
 import { Provider } from "react-redux";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 import { store } from "./store";
-import tw from "tailwind-react-native-classnames";
-import LoginScreen from "./screens/LoginScreen";
-import RegisterScreen from "./screens/RegisterScreen";
-import HomeScreen from "./screens/HomeScreen";
+import LoginScreen from "./src/screens/LoginScreen";
+import RegisterScreen from "./src/screens/RegisterScreen";
+import HomeScreen from "./src/screens/HomeScreen";
+import ParkingSpotScreen from "./src/screens/ParkingSpotScreen";
+
+// const Stack = createNativeStackNavigator();
+
+// const MyStack = () => {
+//   return (
+//     <NavigationContainer>
+//       <Stack.Navigator>
+//         <Stack.Screen
+//           name="Login"
+//           component={LoginScreen}
+//         />
+//         <Stack.Screen 
+//           name="Register" 
+//           component={RegisterScreen}
+//         />
+//         <Stack.Screen 
+//           name="Home" 
+//           component={HomeScreen}
+//         />
+//         <Stack.Screen 
+//           name="ParkingSpot" 
+//           component={ParkingSpotScreen}
+//         />
+//       </Stack.Navigator>
+//     </NavigationContainer>
+//   );
+// };
 
 export default function App() {
   return (
     <Provider store={store}>
-      <LoginScreen />
+      {/* <NavigationContainer> */}
+        <ParkingSpotScreen />
+      {/* </NavigationContainer> */}
     </Provider>
   );
 }

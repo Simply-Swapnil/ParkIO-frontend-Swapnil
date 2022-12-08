@@ -5,7 +5,7 @@ import { Icon } from '@rneui/themed';
 
 const Navbar = () => {
   return (
-    <View style={[styles.container, tw`flex-row justify-evenly pt-4 pb-4 bg-white border-t`]}>
+    <View style={[styles.container, tw`flex-row justify-evenly pt-3 pb-3 bg-gray-100`]}>
       <View>
         <Icon name="home-outline" type="material-community" size={30} />
         <Text>Home</Text>
