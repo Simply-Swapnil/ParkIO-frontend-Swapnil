@@ -8,6 +8,7 @@ import LoginScreen from "./src/screens/LoginScreen";
 import RegisterScreen from "./src/screens/RegisterScreen";
 import HomeScreen from "./src/screens/HomeScreen";
 import ParkingSpotScreen from "./src/screens/ParkingSpotScreen";
+import BookingScreen from "./src/screens/BookingScreen";
 
 // const Stack = createNativeStackNavigator();
 
@@ -40,7 +41,7 @@ export default function App() {
   return (
     <Provider store={store}>
       {/* <NavigationContainer> */}
-        <ParkingSpotScreen />
+        <BookingScreen />
       {/* </NavigationContainer> */}
     </Provider>
   );

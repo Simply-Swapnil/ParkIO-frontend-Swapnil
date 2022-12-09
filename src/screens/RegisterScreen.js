@@ -1,10 +1,4 @@
-import {
-  SafeAreaView,
-  View,
-  Text,
-  TouchableHighlight,
-  TouchableOpacity,
-} from "react-native";
+import { SafeAreaView, View, Text, TouchableHighlight, TouchableOpacity } from "react-native";
 import React from "react";
 import tw from "tailwind-react-native-classnames";
 import Button from "../components/Button";

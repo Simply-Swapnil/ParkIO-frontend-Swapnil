@@ -2,9 +2,7 @@ import { View, Text, TouchableHighlight, Pressable } from "react-native";
 import React, { useState } from "react";
 import tw from "tailwind-react-native-classnames";
 
-// tw`w-1/4 p-3 border rounded-md`
 const Slot = (props) => {
-
   return (
       <View style={tw`w-1/4 p-3 border rounded-md`}>
         <Text style={tw`text-center`}>{props.slot.startTime} am</Text>

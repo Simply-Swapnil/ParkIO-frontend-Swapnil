@@ -18,7 +18,7 @@ const ParkingSpotScreen = ( {navigation} ) => {
           </TouchableOpacity>
         </View>
         <View style={tw`p-5`}>
-          <Text style={tw`text-3xl font-semibold`}>{data.name}</Text>
+          <Text style={tw`text-2xl font-bold`}>{data.name}</Text>
           <Text style={tw`text-lg mb-3 font-medium text-gray-400`}>
             {data.shortaddress}
           </Text>
@@ -65,7 +65,8 @@ const ParkingSpotScreen = ( {navigation} ) => {
         <Text style={tw`pl-7 mb-3 text-xl font-semibold`}>Parking slots availaible</Text>
         <SlotsCarousel slots={data.slotsAvailible}/>
       </View>
-      <Button title="Pick spot" />
+      <Button title="Pick spot" />      
+      {/* On press navigate to booking screen with selected time slot as prop */}
       <Navbar />
     </View>
   );

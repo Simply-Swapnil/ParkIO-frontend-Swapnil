@@ -15,7 +15,7 @@ const data = {
       {
         startTime: "11:00",
         endTime: "12:00",
-        selected: false,
+        selected: true,
       },
       {
         startTime: "1:00",
