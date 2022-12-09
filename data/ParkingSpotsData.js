@@ -1,5 +1,6 @@
 const data = {
     name: "Phoenix mall",
+    img: "https://aniportalimages.s3.amazonaws.com/media/details/Phoinexmarckwet20211115115906.jpg",
     shortaddress: "Viman Nagar, Pune",
     spotsAvailible: 20,     //Database and backend API
     distance: 200,          //Google distance API

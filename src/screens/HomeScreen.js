@@ -4,9 +4,9 @@ import React, { useEffect, useState } from 'react';
 import tw from "tailwind-react-native-classnames";
 import Navbar from '../components/Navbar';
 import SearchBar from '../components/SearchBar';
-import Button from '../components/Button';
+import Button from '../components/BottomButton';
 
-const HomeScreen = ( {navigation} ) => {
+const HomeScreen = () => {
   return (
     <View style={tw`mt-6 h-full`}>
       <Text>HomeScreen</Text>

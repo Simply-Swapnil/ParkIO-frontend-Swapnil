@@ -2,7 +2,7 @@ import { View, TouchableOpacity, Text } from "react-native";
 import React from "react";
 import { Icon } from "@rneui/themed";
 import tw from "tailwind-react-native-classnames";
-import Button from "../components/Button";
+import BottomButton from "../components/BottomButton";
 import user from "../../data/UserData";
 import parkingspot from "../../data/ParkingSpotsData";
 
@@ -20,24 +20,21 @@ const BookingScreen = (props) => {
         </View>
       </View>
       <View style={tw`w-full flex-row`}>
-        <View
-          style={tw`w-1/2 p-3 justify-center border-t border-b border-gray-100`}
-        >
+        <View style={tw`w-1/2 p-3 justify-center border-t border-b border-gray-100`}>
           <Text style={tw`text-center text-gray-400 font-semibold text-base`}>
             Arriving at
           </Text>
           <Text style={tw`text-center font-bold text-lg`}>11:00 am</Text>
         </View>
-        <View
-          style={tw`w-1/2 p-3 justify-center  border-t border-b border-gray-100`}
-        >
+        <View style={tw`w-1/2 p-3 justify-center  border-t border-b border-gray-100`}>
           <Text style={tw`text-center text-gray-400 font-semibold text-base`}>
             Leaving at
           </Text>
           <Text style={tw`text-center font-bold text-lg`}>12:00 am</Text>
         </View>
       </View>
-      <View style={tw`w-full mt-4 pl-7 pr-7`}>
+      <View style={tw`h-4 bg-gray-100`} />
+      <View style={tw`w-full mt-6 pl-7 pr-7`}>
         <Text style={tw`text-xl mb-4 font-semibold`}>Vehicle Details</Text>
         <View style={tw`flex-row pl-1 pr-4 justify-between`}>
           <Text style={tw`text-gray-400`}>Name</Text>
@@ -52,13 +49,18 @@ const BookingScreen = (props) => {
           <Text style={tw`mb-4`}>{user.vehicles[0].regno}</Text>
         </View>
       </View>
-      <View style={tw`bg-yellow-300 p-4 justify-center`}>
-        <Text style={tw`text-2xl font-bold`}>AMOUNT TO BE PAID ₹{parkingspot.rate}</Text>
+      <View style={tw`bg-yellow-300 mt-4 p-4 pr-8`}>
+        <View style={tw`flex-row justify-around`}>
+        <Text style={tw`text-2xl font-bold text-center`}>AMOUNT TO BE PAID</Text>
+        <Text style={tw`text-2xl font-bold text-center`}>₹{parkingspot.rate}</Text>
+        </View>
       </View>
+      <Text style={tw`pl-7 pr-7 pt-4`}>The closest empty and unreserved parking slot will be allocated to you after your payment.</Text>
 
-      <Button title="Pay and Reserve" />
+      <BottomButton title="Pay and Reserve" />
     </View>
   );
 };
+
 
 export default BookingScreen;

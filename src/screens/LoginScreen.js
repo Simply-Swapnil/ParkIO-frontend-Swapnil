@@ -4,7 +4,7 @@ import tw from "tailwind-react-native-classnames";
 import Button from "../components/Button";
 import InputText from "../components/InputText";
 
-const LoginScreen = ( {navigation} ) => {
+const LoginScreen = () => {
   return (
     <View style={tw`mt-6 p-10 h-full`}>
       <View style={tw`items-center mt-5 mb-20`}>

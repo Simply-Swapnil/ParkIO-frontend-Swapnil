@@ -3,12 +3,17 @@ import React, { useState } from "react";
 import tw from "tailwind-react-native-classnames";
 
 const Slot = (props) => {
+  
+  const [timesPressed, setTimesPressed] = useState(0);
+
   return (
-      <View style={tw`w-1/4 p-3 border rounded-md`}>
+    <Pressable>
+      <View style={tw`p-3 border rounded-md`}>
         <Text style={tw`text-center`}>{props.slot.startTime} am</Text>
         <Text style={tw`text-center`}>to</Text>
         <Text style={tw`text-center`}>{props.slot.endTime} am</Text>
       </View>
+    </Pressable>
   );
 };
 
@@ -22,5 +27,6 @@ const SlotsCarousel = (props) => {
     </View>
   );
 };
+
 
 export default SlotsCarousel;
