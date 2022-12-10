@@ -2,16 +2,19 @@ import { View, TouchableOpacity, Text } from "react-native";
 import React from "react";
 import { Icon } from "@rneui/themed";
 import tw from "tailwind-react-native-classnames";
-import BottomButton from "../components/BottomButton";
+import { Button } from "@rneui/themed";
 import user from "../../data/UserData";
 import parkingspot from "../../data/ParkingSpotsData";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const BookingScreen = (props) => {
+
+const BookingScreen = ({ navigation }) => {
   return (
-    <View style={tw`mt-6 h-full`}>
+    <View style={tw`mt-6 h-full`}> 
       <View style={tw`w-full flex-row`}>
         <View style={tw`p-4 pr-0`}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
             <Icon name="arrow-left" type="material-community" size={40} />
           </TouchableOpacity>
         </View>
@@ -19,7 +22,7 @@ const BookingScreen = (props) => {
           <Text style={tw`text-2xl font-bold`}>Booking Details</Text>
         </View>
       </View>
-      <View style={tw`w-full flex-row`}>
+      <View style={tw`w-full mb-4 flex-row`}>
         <View style={tw`w-1/2 p-3 justify-center border-t border-b border-gray-100`}>
           <Text style={tw`text-center text-gray-400 font-semibold text-base`}>
             Arriving at
@@ -33,7 +36,7 @@ const BookingScreen = (props) => {
           <Text style={tw`text-center font-bold text-lg`}>12:00 am</Text>
         </View>
       </View>
-      <View style={tw`h-4 bg-gray-100`} />
+      <View style={tw`h-4 bg-gray-200`} />
       <View style={tw`w-full mt-6 pl-7 pr-7`}>
         <Text style={tw`text-xl mb-4 font-semibold`}>Vehicle Details</Text>
         <View style={tw`flex-row pl-1 pr-4 justify-between`}>
@@ -57,7 +60,7 @@ const BookingScreen = (props) => {
       </View>
       <Text style={tw`pl-7 pr-7 pt-4`}>The closest empty and unreserved parking slot will be allocated to you after your payment.</Text>
 
-      <BottomButton title="Pay and Reserve" />
+      <Button buttonStyle={{padding: 16, borderRadius: 8, margin: 20, marginTop: 190}} color='#000' title="Pay and Reserve" titleStyle={{color:'white', textAlign:'center'}} />
     </View>
   );
 };

@@ -1,10 +1,13 @@
 import { SafeAreaView, View, Text, TouchableHighlight, TouchableOpacity } from "react-native";
 import React from "react";
 import tw from "tailwind-react-native-classnames";
-import Button from "../components/Button";
+import { Button } from '@rneui/themed';
 import InputText from "../components/InputText";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const LoginScreen = () => {
+
+const LoginScreen = ({ navigation }) => {
   return (
     <View style={tw`mt-6 p-10 h-full`}>
       <View style={tw`items-center mt-5 mb-20`}>
@@ -15,11 +18,11 @@ const LoginScreen = () => {
         <InputText secure={false}/>
         <Text>PASSWORD</Text>
         <InputText secure={true}/>
-        <Button title='Login'/>
+        <Button buttonStyle={{width: 290, padding: 16, borderRadius: 8, marginLeft:13, marginTop: 15, marginBottom: 15}} color='#000' title="Login" titleStyle={{color:'white', textAlign:'center'}} onPress={() => navigation.navigate('home')}/>
       </View>
       <View style={tw`self-center flex-row`}>
         <Text>Don't have an account? </Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('register')}>
           <Text style={tw`underline`}>Sign up here</Text>
         </TouchableOpacity>
       </View>

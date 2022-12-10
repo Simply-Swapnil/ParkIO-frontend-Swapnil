@@ -2,18 +2,21 @@ import { View, Text, Image, Touchable, TouchableOpacity, TouchableHighlight } fr
 import React from 'react'
 import tw from "tailwind-react-native-classnames";
 import Navbar from "../components/Navbar";
-import BottomButton from '../components/BottomButton';
+import { Button } from '@rneui/themed';
 import SlotsCarousel from '../components/SlotsCarousel';
 import { Icon } from '@rneui/themed';
 import data from '../../data/ParkingSpotsData';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
-const ParkingSpotScreen = () => {
+
+const ParkingSpotScreen = ({ navigation }) => {
   return (
     <View style={tw`mt-6 h-full`}>
       <View style={tw`w-full flex-row`}>
         <View style={tw`p-4 pr-0`}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
             <Icon name="arrow-left" type="material-community" size={40} />
           </TouchableOpacity>
         </View>
@@ -62,7 +65,7 @@ const ParkingSpotScreen = () => {
           </View>
         </TouchableOpacity>
       </View>
-      <View style={tw`h-4 bg-gray-100`} />
+      <View style={tw`h-4 bg-gray-200`} />
       <View style={tw`w-full mt-4 mb-3 pl-7 pr-7`}>
         <Text style={tw`text-xl mb-3 font-semibold`}>Details</Text>
         <Text style={tw`text-gray-400`}>ADDRESS</Text>
@@ -72,14 +75,14 @@ const ParkingSpotScreen = () => {
         <Text style={tw`text-gray-400`}>RATE</Text>
         <Text style={tw`mb-4`}>{data.rate} ₹/hour</Text>
       </View>
-      <View style={tw`h-4 bg-gray-100`} />
+      <View style={tw`h-4 bg-gray-200`} />
       <View style={tw`w-full mt-4`}>
         <Text style={tw`pl-7 mb-3 text-xl font-semibold`}>
           Timing slots availaible
         </Text>
         <SlotsCarousel slots={data.slotsAvailible} />
       </View>
-      <BottomButton title="Pick spot" />
+      <Button buttonStyle={{padding: 16, borderRadius: 8, margin: 20, marginTop: 40}} color='#000' title="Choose slot" titleStyle={{color:'white', textAlign:'center'}} onPress={() => navigation.navigate('booking')}/>
       {/* On press navigate to booking screen with selected time slot as prop */}
     </View>
   );
