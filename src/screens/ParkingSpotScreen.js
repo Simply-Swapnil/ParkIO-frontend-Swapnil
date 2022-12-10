@@ -44,12 +44,6 @@ const ParkingSpotScreen = ({ navigation }) => {
             <Text>{data.distance} mtrs away</Text>
           </View>
         </View>
-        <View style={tw`justify-center`}>
-          <Image
-            source={{ uri: data.img }}
-            style={tw`w-24 h-24`}
-          />
-        </View>
       </View>
       <View style={tw`w-full flex-row`}>
         <TouchableOpacity style={tw`flex-row justify-center p-0 m-0 w-1/2 border-t border-gray-100`}>
@@ -73,16 +67,10 @@ const ParkingSpotScreen = ({ navigation }) => {
         <Text style={tw`text-gray-400`}>OPERATION</Text>
         <Text style={tw`mb-4`}>{data.timing}</Text>
         <Text style={tw`text-gray-400`}>RATE</Text>
-        <Text style={tw`mb-4`}>{data.rate} ₹/hour</Text>
+        <Text style={tw`mb-4`}>{data.rate} $/hour</Text>
       </View>
       <View style={tw`h-4 bg-gray-200`} />
-      <View style={tw`w-full mt-4`}>
-        <Text style={tw`pl-7 mb-3 text-xl font-semibold`}>
-          Timing slots availaible
-        </Text>
-        <SlotsCarousel slots={data.slotsAvailible} />
-      </View>
-      <Button buttonStyle={{padding: 16, borderRadius: 8, margin: 20, marginTop: 40}} color='#000' title="Choose slot" titleStyle={{color:'white', textAlign:'center'}} onPress={() => navigation.navigate('booking')}/>
+      <Button buttonStyle={{padding: 16, borderRadius: 8, margin: 20, marginTop: 190}} color='#000' title="Choose slot" titleStyle={{color:'white', textAlign:'center'}} onPress={() => navigation.navigate('booking')}/>
       {/* On press navigate to booking screen with selected time slot as prop */}
     </View>
   );
